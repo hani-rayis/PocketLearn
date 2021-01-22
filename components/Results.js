@@ -47,7 +47,8 @@ const styles= StyleSheet.create({
   },
 
   block: {
-    margin: 20
+    margin: 20,
+    fontSize:20
   },
 
   title: {
@@ -58,12 +59,12 @@ const styles= StyleSheet.create({
 
   buttonSection:{
     flexDirection:'row', 
-    justifyContent:'space-between'
+   // justifyContent:'space-between'
   },
 
   btn: {
-      margin: 20,
-      width: 200,
+      margin: 10,
+      width: 130,
       height: 40,
       paddingHorizontal: 10,
       borderRadius: 10,
