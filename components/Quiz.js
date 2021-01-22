@@ -70,12 +70,12 @@ function Quiz(props) {
                 setScore(score + 1)
               }
               style={styles.btn}>
-                  <Text style={styles.btnText}>Correct</Text>
+                  <Text style={styles.btnText2}>Correct</Text>
               </TouchableOpacity>
               <TouchableOpacity 
               onPress={() => handleClick()} 
               style={styles.btn}>
-                  <Text style={styles.btnText}>Incorrect</Text>
+                  <Text style={styles.btnText2}>Incorrect</Text>
               </TouchableOpacity>
           </View>
         </View>
@@ -130,7 +130,10 @@ const styles = StyleSheet.create({
       fontSize: 18,
       color: '#000'
   },
-
+  btnText2: {
+    fontSize: 18,
+    color: '#fff'
+},
   quiz: {
     fontSize:20,
     textAlign:'left',

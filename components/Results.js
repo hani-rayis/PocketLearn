@@ -25,12 +25,12 @@ class Result extends Component {
             <TouchableOpacity 
               onPress={e=>this.props.navigation.push('Start Quiz', {cards, score, title})}
               style={styles.btn}>
-            <Text style={styles.btnText}>Restart Quiz</Text>
+            <Text style={styles.btnText2}>Restart Quiz</Text>
             </TouchableOpacity>
             <TouchableOpacity 
               onPress={e=>this.props.navigation.push('Deck Info', {cards, title})}
               style={styles.btn}>
-            <Text style={styles.btnText}>Back to Deck</Text>
+            <Text style={styles.btnText2}>Back to Deck</Text>
             </TouchableOpacity>
             </View>
       </View>
@@ -76,6 +76,10 @@ const styles= StyleSheet.create({
       fontSize: 18,
       color: '#000'
   },
+  btnText2: {
+    fontSize: 18,
+    color: '#fff'
+},
 });
 
 export default  Result
