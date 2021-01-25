@@ -1,46 +1,43 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 //import { clearLocalNotification, setLocalNotification } from '../utils/helpers';
 
-class Result extends Component {
-  //componentDidMount(){
+function Result(props) {
+  // * for allowing notifications on mobile
+  //useEffect(){
   //clearLocalNotification().then(setLocalNotification);
   //}
 
-  render() {
-    const { cards, score, title } = this.props.route.params;
-    const correctPercent = ((score / cards.length) * 100).toFixed(1);
+  const { cards, score, title } = props.route.params;
+  const correctPercent = ((score / cards.length) * 100).toFixed(1);
 
-    return (
-      <View style={styles.container}>
-        <View>
-          <Text style={styles.title}>Thanks for playing</Text>
-          <Text style={styles.block}>
-            Correct answers: {score} out of {cards.length}
-          </Text>
-          <Text style={styles.block}>Score percentage: {correctPercent}%</Text>
-        </View>
-        <View style={styles.buttonSection}>
-          <TouchableOpacity
-            onPress={(e) =>
-              this.props.navigation.push("Start Quiz", { cards, score, title })
-            }
-            style={styles.btn}
-          >
-            <Text style={styles.btnText2}>Restart Quiz</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={(e) =>
-              this.props.navigation.push("Deck Info", { cards, title })
-            }
-            style={styles.btn}
-          >
-            <Text style={styles.btnText2}>Back to Deck</Text>
-          </TouchableOpacity>
-        </View>
+  return (
+    <View style={styles.container}>
+      <View>
+        <Text style={styles.title}>Thanks for playing</Text>
+        <Text style={styles.block}>
+          Correct answers: {score} out of {cards.length}
+        </Text>
+        <Text style={styles.block}>Score percentage: {correctPercent}%</Text>
       </View>
-    );
-  }
+      <View style={styles.buttonSection}>
+        <TouchableOpacity
+          onPress={(e) =>
+            this.props.navigation.push("Start Quiz", { cards, score, title })
+          }
+          style={styles.btn}
+        >
+          <Text style={styles.btnText2}>Restart Quiz</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={(e) => props.navigation.push("Deck Info", { cards, title })}
+          style={styles.btn}
+        >
+          <Text style={styles.btnText2}>Back to Deck</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
