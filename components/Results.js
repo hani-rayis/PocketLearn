@@ -23,7 +23,7 @@ function Result(props) {
       <View style={styles.buttonSection}>
         <TouchableOpacity
           onPress={(e) =>
-            this.props.navigation.push("Start Quiz", { cards, score, title })
+            props.navigation.push("Start Quiz", { cards, score, title })
           }
           style={styles.btn}
         >
