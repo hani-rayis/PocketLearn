@@ -31,7 +31,7 @@ class AddCard extends Component {
 
     this.props.dispatch(addCardToDeck(title, {question, answer}))
     this.setState({question:"", answer:""})
-    navigation.navigate('Deck List')
+    navigation.navigate('PocketLearn')
   }
 
   render() {

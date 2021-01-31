@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
 
   block: {
     margin: 20,
-    fontsize: 20,
+    fontSize: 20,
   },
 
   title: {
